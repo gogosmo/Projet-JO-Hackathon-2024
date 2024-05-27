@@ -7,32 +7,94 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+body{
+  background-color: #333;
+  color: #cfbe79;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: 2vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.headerSection{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+/*NAV*/
+.navbar {
+  margin-top: 10px;
+  background-color: #272727;
+  padding: 1rem;
+  border-radius: 50px;
+  width: 100%;
+  height: 20px;
+  display: flex;
+  text-align: center;
+  box-shadow:1px 1px 3px #cfbe79;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar ul {
+  list-style-type: none;
+  padding-left:2px;
+  padding-right: 2px;
+  display: flex;
+  margin:auto;
+  gap:20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.navbar ul li {
+  margin-right: 1rem;
+}
+
+.navbar ul li a {
+  color: #cfbe79;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.6s;
+  text-align: center;
+}
+
+
+nav ul li a:hover {
+  color: #e9dba5;
+}
+
+.logo{
+  width: 100px;
+  margin-left: 3vw;
+  margin-right: 3vw;
+}
+
+
+.bm-burger-button {
+  display: none;
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  right: 36px;
+  top: 36px;
+  background-color: transparent;
+  background-image: url('/public/images/burger-menu.svg');
+  background-repeat: no-repeat;
+  background-size: contain; 
+}
+
+
+@media (max-width: 1000px) {
+  .navbar ul {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+  .navbar {
+    margin-top: unset;
+    background-color: unset;
+    padding: unset;
+    border-radius: unset;
+    width: 100%;
+    height: 20px;
+    display: unset;
+    text-align: unset;
+    box-shadow: unset;
   }
+  .bm-burger-button {
+    display: block;
+}
 }
