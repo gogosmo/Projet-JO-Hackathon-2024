@@ -4,7 +4,7 @@ import '../styles/athlete.css'
 function Athlete() {
   return (
     <div>
-      <h1>Athlete</h1>
+      <h1>Athlète</h1>
     </div>
   );
 }

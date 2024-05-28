@@ -35,3 +35,19 @@ p{
 	position:relative;
 	top:1px;
 }
+
+
+.images{
+    width: 60%;
+    border-radius: 20px;
+  } 
+.blockImage{
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 1000px) {
+    .images{
+        width: 90%;
+      }
+}

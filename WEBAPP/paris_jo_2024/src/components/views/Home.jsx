@@ -5,7 +5,10 @@ function Home() {
   return (
     <div>
       <h1>Accueil</h1>
-      <h2>Les Jeux Olympique</h2>
+      <div className='blockImage'>
+        <img className="images" src="/images/Tower2024.png" alt='Ilustration JO Paris 2024'/>
+      </div>
+      <h2>Les Jeux Olympiques</h2>
       <h3>Histoire</h3>
       <p>Les Jeux Olympiques ont une histoire riche qui remonte à l'Antiquité. Les premiers Jeux Olympiques ont eu lieu en 776 av. J.-C. en Grèce et étaient dédiés à Zeus.<br/>Ils ont été abandonnés au IVe siècle après J.-C., mais ont été ravivés à la fin du XIXe siècle par Pierre de Coubertin. Les premiers Jeux Olympiques modernes ont eu lieu en 1896 à Athènes et depuis lors, ils ont eu lieu tous les quatre ans, sauf pendant les guerres mondiales.<br/>Ils ont évolué pour inclure de nouveaux sports et catégories, comme les Jeux Paralympiques. Les Jeux Olympiques ont été le théâtre de moments historiques et de performances exceptionnelles et continuent d'être un symbole de l'excellence sportive et de l'unité mondiale.</p>
       <h3>Paris 2024</h3>
