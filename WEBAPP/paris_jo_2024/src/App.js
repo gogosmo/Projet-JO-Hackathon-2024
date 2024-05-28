@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home from './components/views/Home';
 import Analyse from './components/views/Analyse'
 import Prediction from './components/views/Prediction'
-import Visualisation from './components/views/Visualisation'
+import Athlete from './components/views/Athlete'
 import Liens from './components/views/Liens';
 import Info from './components/views/Info';
 import './App.css';
@@ -35,8 +35,8 @@ function App() {
           <img className="logo" src="/images/logoparis2024.png" alt='logo paris 2024'/>
           <nav className='navbar'>
             <ul>
-              <li><Link to="/visualisation">visualisation</Link></li>
-              <li><Link to="/a-propos">A propos</Link></li>
+              <li><Link to="/athlete">Athlète</Link></li>
+              <li><Link to="/a-propos">Notre équipe</Link></li>
               <li><Link to="/liens-utiles">Liens utiles</Link></li>
             </ul>
           </nav>
@@ -49,8 +49,8 @@ function App() {
               <li><Link to="/">Accueil</Link></li>
               <li><Link to="/quelque-chiffres">Quelques chiffres</Link></li>
               <li><Link to="/prediction-gagnant">Prédire les résultats</Link></li>
-              <li><Link to="/visualisation">visualisation</Link></li>
-              <li><Link to="/a-propos">A propos</Link></li>
+              <li><Link to="/athlete">Athlète</Link></li>
+              <li><Link to="/a-propos">Notre équipe</Link></li>
               <li><Link to="/liens-utiles">Liens utiles</Link></li>
             </ul>
           </Menu>
@@ -60,7 +60,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/quelque-chiffres" element={<Analyse />} />
             <Route path="/prediction-gagnant" element={<Prediction />} />
-            <Route path="/visualisation" element={<Visualisation />} />
+            <Route path="/athlete" element={<Athlete />} />
             <Route path="/a-propos" element={<Info />} />
             <Route path="/liens-utiles" element={<Liens />} />
           </Routes>
