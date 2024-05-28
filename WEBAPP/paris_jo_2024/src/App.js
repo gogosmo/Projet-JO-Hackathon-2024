@@ -6,6 +6,15 @@ import Info from './components/Info';
 import './App.css';
 import { slide as Menu } from 'react-burger-menu';
 
+const CustomCrossIcon = () => {
+  return (
+    <div className="custom-cross-icon">
+      <span className="cross-line cross-line-1"></span>
+      <span className="cross-line cross-line-2"></span>
+    </div>
+  );
+};
+
 function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
@@ -27,7 +36,11 @@ function App() {
               <li><Link to="/liens-utiles">Liens utiles</Link></li>
             </ul>
           </nav>
-          <Menu isOpen={isMenuOpen} onStateChange={(state) => setIsMenuOpen(state.isOpen)}>
+          <Menu
+            isOpen={isMenuOpen}
+            onStateChange={(state) => setIsMenuOpen(state.isOpen)}
+            customCrossIcon={<CustomCrossIcon />}
+          >
             <ul>
               <li><Link to="/">Accueil</Link></li>
               <li><Link to="/analyse-des-donnees">Analyse des données</Link></li>
