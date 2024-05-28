@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/visualisation.css'
+import '../styles/visualisation.css'
 
 function visualisation() {
   return (

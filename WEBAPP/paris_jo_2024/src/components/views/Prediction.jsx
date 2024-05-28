@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/prediction.css'
+import '../styles/prediction.css'
 
 function Prediction() {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/analyse.css'
+import '../styles/analyse.css'
 
 function Analyse() {
   return (

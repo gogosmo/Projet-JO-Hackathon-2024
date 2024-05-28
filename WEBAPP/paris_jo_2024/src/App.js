@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import Home from './components/Home';
-import Analyse from './components/Analyse'
-import Prediction from './components/Prediction'
-import Visualisation from './components/Visualisation'
-import Liens from './components/Liens';
-import Info from './components/Info';
+import Home from './components/views/Home';
+import Analyse from './components/views/Analyse'
+import Prediction from './components/views/Prediction'
+import Visualisation from './components/views/Visualisation'
+import Liens from './components/views/Liens';
+import Info from './components/views/Info';
 import './App.css';
 import { slide as Menu } from 'react-burger-menu';
 
