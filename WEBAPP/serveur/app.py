@@ -4,6 +4,10 @@ from psycopg2.extras import RealDictCursor
 from psycopg2 import sql
 from dotenv import load_dotenv
 import os
+import joblib
+from keras import models
+import numpy as np
+import pandas as pd
 
 load_dotenv()
 
@@ -15,6 +19,10 @@ DB_USER = os.getenv('DB_USER')
 DB_PASSWORD = os.getenv('DB_PASSWORD')
 
 conn = psycopg2.connect(host=DB_HOST, database=DB_NAME, user=DB_USER, password=DB_PASSWORD)
+
+# Charger les modèles
+model = models.load_model('olympic_medal_prediction_model.h5')
+preprocessor = joblib.load('column_transformer.pkl')
 
 @app.route('/', methods=['GET'])
 def home():
@@ -91,6 +99,41 @@ def get_athletes():
         return jsonify({'error': str(e)}), 500
     finally:
         cur.close()
+
+
+# Route pour les prédictions
+@app.route('/predict', methods=['POST'])
+def predict():
+    data = request.json
+    if not data:
+        return jsonify({"error": "No input data provided"}), 400
+
+    try:
+        
+        athlete_data = pd.DataFrame([data])
+
+        athlete_data_transformed = preprocessor.transform(athlete_data)
+
+        predictions = model.predict(athlete_data_transformed)
+        predicted_classes = np.argmax(predictions, axis=1)
+
+        medal_probabilities = {
+            'None': float(predictions[0][0]),
+            'Bronze': float(predictions[0][1]),
+            'Silver': float(predictions[0][2]),
+            'Gold': float(predictions[0][3])
+        }
+
+        response = {
+            'medal_probabilities': medal_probabilities,
+            'predicted_medal_class': int(predicted_classes[0])
+        }
+
+        return jsonify(response)
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 
 @app.after_request
 def add_cors_headers(response):
