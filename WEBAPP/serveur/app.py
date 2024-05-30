@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 import psycopg2
 from psycopg2.extras import RealDictCursor
+from psycopg2 import sql
 from dotenv import load_dotenv
 import os
 
@@ -56,14 +57,40 @@ def get_medals():
 
     if conditions:
         query += ' WHERE ' + ' AND '.join(conditions)
-    
-    cur = conn.cursor(cursor_factory=RealDictCursor)
-    cur.execute(query, values)
-    medals = cur.fetchall()
 
-    return jsonify(medals)
+    try:
+        cur = conn.cursor(cursor_factory=RealDictCursor)
+        cur.execute(query, values)
+        medals = cur.fetchall()
+        conn.commit()
+        return jsonify(medals)
+    except Exception as e:
+        conn.rollback()
+        return jsonify({'error': str(e)}), 500
+    finally:
+        cur.close()
 
+@app.route('/athletes', methods=['GET'])
+def get_athletes():
+    query = '''
+                SELECT DISTINCT oa.athlete_full_name, oa.athlete_age, oa.first_game, oa.total_medals, oa.total_gold, oa.total_silver, oa.total_bronze, oa.bio, olr.country_name 
+                FROM olympic_athletes oa 
+                LEFT JOIN olympic_results olr ON oa.athlete_url = olr.athlete_url 
+                WHERE oa.athlete_age < 50 
+                ORDER BY oa.total_medals DESC
 
+            '''
+    try:
+        cur = conn.cursor(cursor_factory=RealDictCursor)
+        cur.execute(query)
+        athletes = cur.fetchall()
+        conn.commit()
+        return jsonify(athletes)
+    except Exception as e:
+        conn.rollback()
+        return jsonify({'error': str(e)}), 500
+    finally:
+        cur.close()
 
 @app.after_request
 def add_cors_headers(response):
