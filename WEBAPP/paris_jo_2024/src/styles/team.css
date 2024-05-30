@@ -1,0 +1,168 @@
+.container_team {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.circleStyle {
+  width: 60%;
+  height: 70%;
+  border-radius: 50px;
+  background-color: #242424;
+  position: absolute;
+  z-index: -1;
+  top: 20%; 
+}
+
+.rectangleStyle {
+  width: 50%;
+  background-color: #333333da;
+  border: solid 2px #cfbe79;
+  position: relative;
+  z-index: 1;
+  text-align: center; 
+  padding: 20px;
+  margin-top: 10%;
+}
+
+.img_team {
+  width: 25%;
+  height: auto; 
+  z-index: 1; 
+  border: solid 1px #cfbe79;
+}
+
+.titleTeam {
+  margin-top: 10%;
+  color: #cfbe79;
+  text-align: center;
+}
+
+.textTeam {
+  text-align: center;
+}
+
+.containerCard {
+  margin-top: 5%;
+  margin-bottom: 10%;
+  display: flex;
+  justify-content: center;
+}
+
+.cardTeam {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.teamCard {
+  border-radius: 50px;
+  border: solid 1px #cfbe79 !important;
+}
+
+.teamCardBody {
+  background-color: #242424;
+  color: #242424;
+}
+
+.titleCardTeam {
+  padding-bottom: 20px;
+  text-align: center;
+  color: #cfbe79 !important;
+  font-weight: 600 !important;
+}
+
+.strongCardTeam {
+  color: #929292;
+}
+
+.textCardTeam {
+  color: #cfbe79;
+}
+
+@media screen and (min-width: 1300px) {
+  .container_team {
+    flex-direction: row;
+    align-items: flex-start; 
+    margin-top: 5%; 
+  }
+
+  .circleStyle {
+    width: 60%;
+    height: 100%;
+    top: auto; 
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .rectangleStyle {
+    width: 30%;
+    height: auto;
+    margin-top: 5%; 
+  }
+
+  .img_team {
+    width: 15%;
+    height: auto;
+    margin-top: 0; 
+    margin-right: 2%;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .container_team {
+    margin-top: 15%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .circleStyle {
+    width: 80%;
+    height: 50%;
+    top: 30%;
+  }
+
+  .rectangleStyle {
+    width: 60%;
+    height: auto; 
+    margin-left: 5%;
+  }
+
+  .img_team {
+    width: 35%;
+    height: auto;
+  }
+
+  .cardTeam {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center; 
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .circleStyle {
+    width: 90%;
+    height: 40%;
+    top: 40%;
+  }
+
+  .rectangleStyle {
+    width: 80%;
+    height: auto;
+  }
+
+  .img_team {
+    width: 50%;
+    height: auto;
+  }
+
+  .cardTeam {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
