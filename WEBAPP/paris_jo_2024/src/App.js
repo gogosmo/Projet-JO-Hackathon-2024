@@ -5,7 +5,7 @@ import Analyse from './views/Analyse'
 import Prediction from './views/Prediction'
 import Athlete from './views/Athlete'
 import Liens from './views/Liens';
-import Info from './views/Info';
+import Teams from './views/Teams';
 import './App.css';
 import { slide as Menu } from 'react-burger-menu';
 
@@ -61,7 +61,7 @@ function App() {
             <Route path="/quelque-chiffres" element={<Analyse />} />
             <Route path="/prediction-gagnant" element={<Prediction />} />
             <Route path="/athlete" element={<Athlete />} />
-            <Route path="/a-propos" element={<Info />} />
+            <Route path="/a-propos" element={<Teams />} />
             <Route path="/liens-utiles" element={<Liens />} />
           </Routes>
         </div>
