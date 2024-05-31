@@ -1,12 +1,22 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function Card({ athlete }) {
   const [showModal, setShowModal] = useState(false);
+  const [athleteImage, setAthleteImage] = useState(null);
 
   const openModal = () => {
     setShowModal(true);
     document.body.classList.add('modal-open');
+
+    // Envoie de la requête POST avec athlete_bio_url
+    axios.post('/get_athlete_image', { athlete_bio_url: athlete.athlete_bio_url })
+      .then(response => {
+        setAthleteImage(response.data.image_url);
+      })
+      .catch(error => {
+        console.error('Error fetching athlete image:', error);
+      });
   };
 
   const closeModal = () => {
@@ -38,17 +48,22 @@ function Card({ athlete }) {
           <div className="modal-backdrop fade show" onClick={closeModal}></div>
           <div className="modal fade show" style={{ display: 'block' }} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog">
-              <div className="modal-content">
+              <div className="modal-content modalBio">
                 <div className="modal-header">
                   <h5 className="modal-title" id="exampleModalLabel">{athlete.athlete_full_name}</h5>
                   <button type="button" className="btn-close" onClick={closeModal} aria-label="Close"></button>
+                  
+                </div>
+                <div className='text-center'>
+                  <a href={athlete.athlete_url}><p className="modal-title" id="exampleModalLabel">Voir le profil</p></a>
                 </div>
                 <div className="modal-body">
-                <p>{athlete.bio}</p>
+
+                  {athleteImage && <img src={athleteImage} alt="Athlete" />}
+                  <p>{athlete.bio}</p>
                 </div>
                 <div className="modal-footer">
-                  <button type="button" className="btn btn-secondary" onClick={closeModal}>Close</button>
-                  <button type="button" className="btn btn-primary">Save changes</button>
+                  <button type="button" className="btn btn-secondary" onClick={closeModal}>Fermer</button>
                 </div>
               </div>
             </div>

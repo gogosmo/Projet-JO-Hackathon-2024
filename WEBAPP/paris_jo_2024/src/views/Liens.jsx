@@ -24,8 +24,8 @@ function Liens() {
       
       <div className="link-section">
         <h3>Documentation :</h3>
-        <a href="https://docs.project.com" target="_blank" rel="noopener noreferrer">
-          https://docs.project.com
+        <a href="https://cheerful-yacht-8f6.notion.site/Hackathon-0abb6cd150944ee48107de37633a6f07" target="_blank" rel="noopener noreferrer">
+          Documentation projet
         </a>
         <p>Lire la documentation du projet pour comprendre les fonctionnalités et l'architecture.</p>
       </div>
