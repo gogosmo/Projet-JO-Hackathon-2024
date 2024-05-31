@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link, NavLink } from 'react-router-dom';
 import Home from './views/Home';
 import Analyse from './views/Analyse'
 import Prediction from './views/Prediction'
@@ -27,17 +27,17 @@ function App() {
         <div className='headerSection'>
           <nav className='navbar'>
             <ul>
-              <li><Link to="/">Accueil</Link></li>
-              <li><Link to="/quelque-chiffres">Quelques chiffres</Link></li>
-              <li><Link to="/prediction-gagnant">Prédire les résultats</Link></li>
+              <li><NavLink exact to="/" activeClassName="active-link">Accueil</NavLink></li>
+              <li><NavLink to="/quelque-chiffres" activeClassName="active-link">Quelques chiffres</NavLink></li>
+              <li><NavLink to="/prediction-gagnant" activeClassName="active-link">Prédire les résultats</NavLink></li>
             </ul>
           </nav>
           <img className="logo" src="/images/logoparis2024.png" alt='logo paris 2024'/>
           <nav className='navbar'>
             <ul>
-              <li><Link to="/athlete">Athlète</Link></li>
-              <li><Link to="/a-propos">Notre équipe</Link></li>
-              <li><Link to="/liens-utiles">Liens utiles</Link></li>
+              <li><NavLink to="/athlete" activeClassName="active-link">Athlète</NavLink></li>
+              <li><NavLink to="/a-propos" activeClassName="active-link">Notre équipe</NavLink></li>
+              <li><NavLink to="/liens-utiles" activeClassName="active-link">Liens utiles</NavLink></li>
             </ul>
           </nav>
           <Menu
@@ -46,12 +46,12 @@ function App() {
             customCrossIcon={<CustomCrossIcon />}
           >
             <ul>
-              <li><Link to="/">Accueil</Link></li>
-              <li><Link to="/quelque-chiffres">Quelques chiffres</Link></li>
-              <li><Link to="/prediction-gagnant">Prédire les résultats</Link></li>
-              <li><Link to="/athlete">Athlète</Link></li>
-              <li><Link to="/a-propos">Notre équipe</Link></li>
-              <li><Link to="/liens-utiles">Liens utiles</Link></li>
+              <li><NavLink exact to="/" activeClassName="active-link">Accueil</NavLink></li>
+              <li><NavLink to="/quelque-chiffres" activeClassName="active-link">Quelques chiffres</NavLink></li>
+              <li><NavLink to="/prediction-gagnant" activeClassName="active-link">Prédire les résultats</NavLink></li>
+              <li><NavLink to="/athlete" activeClassName="active-link">Athlète</NavLink></li>
+              <li><NavLink to="/a-propos" activeClassName="active-link">Notre équipe</NavLink></li>
+              <li><NavLink to="/liens-utiles" activeClassName="active-link">Liens utiles</NavLink></li>
             </ul>
           </Menu>
         </div>
