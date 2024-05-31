@@ -18,16 +18,19 @@ function Card({ athlete }) {
     <div className="cardAthlete card h-100">
       <div className="card-body">
         <h5 className="card-title">{athlete.athlete_full_name}</h5>
-        <h6 className="card-subtitle mb-2 text-muted">{athlete.athlete_age} ans</h6>
-        <h6 className="card-subtitle mb-2 text-muted">{athlete.country_name ? athlete.country_name : "Inconnu"}</h6>        <p className="card-text">1° participation : {athlete.first_game}</p>
+        <h6 className="card-subtitle mb-2 ">{athlete.athlete_age} ans</h6>
+        <h6 className="card-subtitle mb-2 ">{athlete.country_name ? athlete.country_name : "Inconnu"}</h6>       
+        <p className="card-text">1° participation : {athlete.first_game}</p>
         <p className="card-text">Nb médaille : {athlete.total_medals}</p>
         <p className="card-text">Nb médaille OR : {athlete.total_gold}</p>
         <p className="card-text">Nb médaille Silver : {athlete.total_silver}</p>
         <p className="card-text">Nb médaille Bronze : {athlete.total_bronze}</p>
-
-        <button type="button" className="btn btn-primary" onClick={openModal}>
-          Bio
-        </button>      
+        <div className='text-center'>
+          <button type="button" className="lienAthlete boutonBio" onClick={openModal}>
+            Bio
+          </button> 
+        </div>
+             
       </div>
       
       {showModal && (
