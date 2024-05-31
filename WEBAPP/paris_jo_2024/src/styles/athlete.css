@@ -4,16 +4,19 @@
 
 .cardAthlete{
     box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
-
+    background-color: #242424 !important;
+    color: rgb(206, 189, 120) !important;
 }
 .boutonBio{
     border: 1px solid black;
+    background-color: gray;
     border-radius: 50px;
 
 }
 
 .lienAthlete{
     text-decoration: none;
+    width: 100%;
     color: inherit;
 }
 
