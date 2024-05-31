@@ -128,7 +128,7 @@ def predict():
             'medal_probabilities': medal_probabilities,
             'predicted_medal_class': int(predicted_classes[0])
         }
-    
+        
         return jsonify(response)
 
     except Exception as e:
