@@ -5,63 +5,50 @@ import TeamCard from '../components/team/teamCard';
 function Team() {
   return (
     <div>
-      <div className='container_team'>
-        <img className="img_team" src="/images/priscilla-du-preez-nNMBa7Y1Ymk-unsplash.jpg" alt="Image d'une équipe" />
-        <div className='circleStyle' />
-        <div className='rectangleStyle'>
-          <h2 className='titleTeam'>Titre</h2>
-          <p className='textTeam'>blabla</p>
-        </div>
+      <div className='rectangleStyle'>
+        <h2 className='titleTeam'>Infos</h2>
+        <p className='textTeam'>Ce site est un projet IPSSI<br/>Nous sommes une équipe composé de 8 éleves en Master IA et BigData</p>
       </div>
-
       <h2 className='titleTeam'>L'équipe</h2>
       <div className='containerCard'>
         <div className="cardTeam">
           <TeamCard
-            name="Card 1"
-            age="24 ans"
+            name="Bruno SA E SILVA"
             master="M1"
-            description="This is the first card."
+            description="Data visualization / Création de la BDD"
           />
           <TeamCard
-            name="Card 2"
-            age="24 ans"
+            name="David CARNEIRO"
             master="M1"
-            description="This is the second card."
+            description="Développement du front"
           />
           <TeamCard
-            name="Card 3"
-            age="24 ans"
-            master="M1"
-            description="This is the third card."
+            name="Farah GARGABOU"
+            master="M2"
+            description="Data visualization"
           />
           <TeamCard
-            name="Card 4"
-            age="24 ans"
+            name="Jugurtha"
             master="M1"
-            description="This is the fourth card."
+            description="Chef de projet / "
           />
           <TeamCard
-            name="Card 5"
-            age="24 ans"
+            name="Lylia FAREZ"
             master="M1"
-            description="This is the fifth card."
+            description="Création du modèle IA"
           />
           <TeamCard
-            name="Card 6"
-            age="24 ans"
-            master="M1"
-            description="This is the sixth card."
+            name="Simon DANIEL"
+            master="M2"
+            description="Création du modèle IA"
           />
           <TeamCard
-            name="Card 7"
-            age="24 ans"
-            master="M1"
-            description="This is the seventh card."
+            name="Youssef AZARRAF"
+            master="M2"
+            description="Développement du backend"
           />
           <TeamCard
             name="Nicolas DESFORGES"
-            age="24 ans"
             master="M1"
             description="Développement du front"
           />

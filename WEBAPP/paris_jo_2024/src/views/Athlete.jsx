@@ -46,7 +46,6 @@ function Athlete() {
 
   return (
     <div className="container">
-      <h1 className="titrePageAthlete mt-4 mb-4">Athlètes</h1>
       <input
         type="text"
         className="form-control mb-4"

@@ -5,7 +5,6 @@ import React from 'react';
 function Liens() {
   return (
     <div className="liens-container">
-      <h1>Liens du projet</h1>
       
       <div className="link-section">
         <h3>Github :</h3>

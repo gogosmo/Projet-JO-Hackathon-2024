@@ -4,7 +4,6 @@ import '../styles/home.css'
 function Home() {
   return (
     <div>
-      <h1>Accueil</h1>
       <div className='blockImage'>
         <img className="images" src="/images/Tower2024.png" alt='Ilustration JO Paris 2024'/>
       </div>

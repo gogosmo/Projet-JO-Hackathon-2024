@@ -1,19 +1,4 @@
-p{
-    color:#c9c9c9; 
- }
- h1{
-     font-weight: 900;
-     text-align: center;
- }
- h2{
-    margin-top: 60px;
-    margin-bottom: 30px;
- }
- h3{
-    margin-top: 30px;
-    margin-bottom: 5px;
-    color:#ededed; 
- }
+
  .myButton {
 	background:linear-gradient(to bottom, #333333 5%, #272727 100%);
 	background-color:#333333;
@@ -42,6 +27,7 @@ p{
     border-radius: 20px;
   } 
 .blockImage{
+    margin-bottom: 5%;
     display: flex;
     justify-content: center;
 }
